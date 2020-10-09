@@ -1,13 +1,20 @@
 import React from 'react';
 import ColorPicker from './ColorPicker';
+import BoxTable from './BoxTable';
 
 import './App.css';
+import { generateBoxArr } from './utils';
 
 class App extends React.Component {
   state = {
-    color1: '#fff',
-    color2: '#000',
+    boxes: 6,
+    color1: '#ffffff',
+    color2: '#000000',
   };
+
+  handleBoxesChange = e => {
+    this.setState({ boxes: parseInt(e.target.value, 10) });
+  }
 
   handleColorChange = (key, color) => {
     const newState = {...this.state}
@@ -16,20 +23,30 @@ class App extends React.Component {
   };
 
   render() {
+    const { boxes, color1, color2 } = this.state;
+    const boxArr = generateBoxArr(boxes, color1, color2)
+    console.log(boxArr)
     return (
-      <div>
+      <div className="App">
         <div className="colorpicker-row">
+          <label>Boxes</label>
+          <input 
+            className="box-input" 
+            type="number"
+            value={boxes} 
+            onChange={this.handleBoxesChange}></input>
           <ColorPicker
-            color={this.state.color1}
+            color={color1}
             handleColorChange={(color) => this.handleColorChange('color1', color)}
           />
           <ColorPicker
-            color={this.state.color2}
+            color={color2}
             handleColorChange={(color) => this.handleColorChange('color2', color)}
           />
         </div>
-        <p>{this.state.color1}</p>
-        <p>{this.state.color2}</p>
+        <p>{color1}</p>
+        <p>{color2}</p>
+        <BoxTable boxArr={boxArr} />
       </div>
     );
   }

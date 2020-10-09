@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  padding: 30px;
 }
 
 .colorpicker-row {
@@ -21,4 +22,19 @@
 
 .colorpicker-container {
   position: absolute;
+}
+
+.box {
+  height: 50px;
+  width: 50px;
+}
+
+.box-input {
+  height: 15px;
+  margin-right: 20px;
+}
+
+.boxTable {
+  overflow-x: auto;
+  /* overflow-x: scroll; */
 }
