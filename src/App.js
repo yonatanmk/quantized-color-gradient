@@ -25,7 +25,6 @@ class App extends React.Component {
   render() {
     const { boxes, color1, color2 } = this.state;
     const boxArr = generateBoxArr(boxes, color1, color2)
-    console.log(boxArr)
     return (
       <div className="App">
         <div className="colorpicker-row">

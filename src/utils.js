@@ -1,5 +1,4 @@
 export const generateBoxArr = (boxes, color1, color2) => {
-  console.log(boxes)
   const color1Arr = [toDec(color1.slice(1,3)), toDec(color1.slice(3,5)), toDec(color1.slice(5,7))];
   const color2Arr = [toDec(color2.slice(1,3)), toDec(color2.slice(3,5)), toDec(color2.slice(5,7))];
   const increments = color1Arr.map((color, i) => Math.round((color2Arr[i] - color1Arr[i]) / (boxes - 1)))
