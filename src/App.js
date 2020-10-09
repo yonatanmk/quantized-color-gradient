@@ -44,8 +44,6 @@ class App extends React.Component {
             handleColorChange={(color) => this.handleColorChange('color2', color)}
           />
         </div>
-        <p>{color1}</p>
-        <p>{color2}</p>
         <BoxTable boxArr={boxArr} />
       </div>
     );
