@@ -18,14 +18,16 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <ColorPicker
-          color={this.state.color1}
-          handleColorChange={(color) => this.handleColorChange('color1', color)}
-        />
-        <ColorPicker
-          color={this.state.color1}
-          handleColorChange={(color) => this.handleColorChange('color2', color)}
-        />
+        <div className="colorpicker-row">
+          <ColorPicker
+            color={this.state.color1}
+            handleColorChange={(color) => this.handleColorChange('color1', color)}
+          />
+          <ColorPicker
+            color={this.state.color2}
+            handleColorChange={(color) => this.handleColorChange('color2', color)}
+          />
+        </div>
         <p>{this.state.color1}</p>
         <p>{this.state.color2}</p>
       </div>

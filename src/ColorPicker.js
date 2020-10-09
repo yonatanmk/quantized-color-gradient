@@ -4,21 +4,22 @@ import { SketchPicker } from 'react-color';
 class ColorPicker extends React.Component {
   state = {
     display: false,
-    background: '#fff',
   };
 
-  handleChangeComplete = (color) => {
-    this.setState({ background: color.hex });
-  };
+  toggleDisplay = () => this.setState({ display: !this.state.display });
 
   render() {
     const {color, handleColorChange} = this.props;
+    const { display } = this.state;
     return (
-      <div>
-        <SketchPicker
-          color={ color }
-          onChangeComplete={handleColorChange}
-        />
+      <div className="colorpicker">
+        <button className="colorpicker-button" onClick={this.toggleDisplay}>{display ? 'Hide' : color.toUpperCase() }</button>
+        {display && <div className="colorpicker-container">
+          <SketchPicker
+            color={ color }
+            onChangeComplete={handleColorChange}
+          />
+        </div>}
       </div>
     );
   }

@@ -1,3 +1,24 @@
 .App {
   text-align: center;
 }
+
+.colorpicker-row {
+  display: flex;
+}
+
+.colorpicker {
+  margin-bottom: 300px;
+}
+
+.colorpicker:not(:last-child) {
+  margin-right: 20px;
+}
+
+.colorpicker-button {
+  width: 220px;
+  /* margin-bottom: 20px; */
+}
+
+.colorpicker-container {
+  position: absolute;
+}
